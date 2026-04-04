@@ -68,6 +68,7 @@ tags: headers
 | --- | --- | --- |
 | **secure-headers** | PHP Secure Headers for Laravel and non-Laravel projects. | [👩‍💻](https://github.com/bepsvpt/secure-headers) |
 | **laravel-csp** | Package to set content security policy headers in a Laravel app. | [👩‍💻](https://github.com/spatie/laravel-csp) |
+| **security-headers** | Provides an implementation for configuring HTTP security headers in web applications developed in PHP (Spanish). | [👩‍💻](https://github.com/OWASP/www-project-randomized-header-channel-for-csrf-protection/tree/main/resources/security-headers) |
 
 ### NodeJS
 
