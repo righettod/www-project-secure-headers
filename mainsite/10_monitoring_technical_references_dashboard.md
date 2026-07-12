@@ -4,7 +4,7 @@
 
 # Technical References Dashboard
 
-> 📅 Last verification (UTC): 2026-07-05 01:00:02
+> 📅 Last verification (UTC): 2026-07-12 00:52:05
 
 ## GitHub repositories health status
 
@@ -34,12 +34,12 @@ Project reaching the :red_circle: status **are removed**.
 | `2026-05-26T12:52:22Z` (2 months ago) | :green_circle: | [google/csp-evaluator](https://github.com/google/csp-evaluator) |
 | `2026-05-26T15:40:23Z` (2 months ago) | :green_circle: | [danielkov/rust-helmet](https://github.com/danielkov/rust-helmet) |
 | `2026-06-04T18:50:40Z` (1 months ago) | :green_circle: | [OWASP/www-project-randomized-header-channel-for-csrf-protection/tree/main/resources/security-headers](https://github.com/OWASP/www-project-randomized-header-channel-for-csrf-protection/tree/main/resources/security-headers) |
-| `2026-06-22T18:06:26Z` (1 months ago) | :green_circle: | [github/secure_headers](https://github.com/github/secure_headers) |
-| `2026-06-22T20:01:55Z` (1 months ago) | :green_circle: | [TypeError/secure](https://github.com/TypeError/secure) |
 | `2026-06-23T22:57:55Z` (1 months ago) | :green_circle: | [GaProgMan/OwaspHeaders.Core](https://github.com/GaProgMan/OwaspHeaders.Core) |
-| `2026-06-25T20:34:27Z` (1 months ago) | :green_circle: | [drwetter/testssl.sh](https://github.com/drwetter/testssl.sh) |
 | `2026-06-26T19:21:13Z` (1 months ago) | :green_circle: | [spatie/laravel-csp](https://github.com/spatie/laravel-csp) |
-| `2026-06-30T15:12:42Z` (1 months ago) | :green_circle: | [mdn/mdn-http-observatory](https://github.com/mdn/mdn-http-observatory) |
-| `2026-07-01T21:33:27Z` (0 months ago) | :green_circle: | [helmetjs/helmet](https://github.com/helmetjs/helmet) |
-| `2026-07-04T22:54:08Z` (0 months ago) | :green_circle: | [rfc-st/humble](https://github.com/rfc-st/humble) |
+| `2026-07-06T16:36:42Z` (0 months ago) | :green_circle: | [github/secure_headers](https://github.com/github/secure_headers) |
+| `2026-07-10T13:55:07Z` (0 months ago) | :green_circle: | [mdn/mdn-http-observatory](https://github.com/mdn/mdn-http-observatory) |
+| `2026-07-10T21:22:04Z` (0 months ago) | :green_circle: | [TypeError/secure](https://github.com/TypeError/secure) |
+| `2026-07-11T20:27:16Z` (0 months ago) | :green_circle: | [rfc-st/humble](https://github.com/rfc-st/humble) |
+| `2026-07-11T20:47:25Z` (0 months ago) | :green_circle: | [drwetter/testssl.sh](https://github.com/drwetter/testssl.sh) |
+| `2026-07-12T00:48:18Z` (0 months ago) | :green_circle: | [helmetjs/helmet](https://github.com/helmetjs/helmet) |
 
