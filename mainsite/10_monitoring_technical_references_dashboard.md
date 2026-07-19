@@ -4,7 +4,7 @@
 
 # Technical References Dashboard
 
-> 📅 Last verification (UTC): 2026-07-12 00:52:05
+> 📅 Last verification (UTC): 2026-07-19 00:50:57
 
 ## GitHub repositories health status
 
@@ -37,9 +37,9 @@ Project reaching the :red_circle: status **are removed**.
 | `2026-06-23T22:57:55Z` (1 months ago) | :green_circle: | [GaProgMan/OwaspHeaders.Core](https://github.com/GaProgMan/OwaspHeaders.Core) |
 | `2026-06-26T19:21:13Z` (1 months ago) | :green_circle: | [spatie/laravel-csp](https://github.com/spatie/laravel-csp) |
 | `2026-07-06T16:36:42Z` (0 months ago) | :green_circle: | [github/secure_headers](https://github.com/github/secure_headers) |
-| `2026-07-10T13:55:07Z` (0 months ago) | :green_circle: | [mdn/mdn-http-observatory](https://github.com/mdn/mdn-http-observatory) |
 | `2026-07-10T21:22:04Z` (0 months ago) | :green_circle: | [TypeError/secure](https://github.com/TypeError/secure) |
-| `2026-07-11T20:27:16Z` (0 months ago) | :green_circle: | [rfc-st/humble](https://github.com/rfc-st/humble) |
-| `2026-07-11T20:47:25Z` (0 months ago) | :green_circle: | [drwetter/testssl.sh](https://github.com/drwetter/testssl.sh) |
-| `2026-07-12T00:48:18Z` (0 months ago) | :green_circle: | [helmetjs/helmet](https://github.com/helmetjs/helmet) |
+| `2026-07-12T01:24:55Z` (0 months ago) | :green_circle: | [helmetjs/helmet](https://github.com/helmetjs/helmet) |
+| `2026-07-16T12:00:24Z` (0 months ago) | :green_circle: | [drwetter/testssl.sh](https://github.com/drwetter/testssl.sh) |
+| `2026-07-17T10:55:21Z` (0 months ago) | :green_circle: | [mdn/mdn-http-observatory](https://github.com/mdn/mdn-http-observatory) |
+| `2026-07-18T18:57:36Z` (0 months ago) | :green_circle: | [rfc-st/humble](https://github.com/rfc-st/humble) |
 
