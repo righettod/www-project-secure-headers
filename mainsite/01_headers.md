@@ -28,6 +28,7 @@
 * [Cross-Origin-Resource-Policy](#cross-origin-resource-policy)
 * [Cache-Control](#cache-control)
 * [X-DNS-Prefetch-Control](#x-dns-prefetch-control)
+* [Integrity-Policy](#integrity-policy)
 
 ⏰ **Almost deprecated**
 
@@ -64,11 +65,11 @@ Removal tends to be slow and painful for those sites.
 
 ### Values
 
-| Value               | Description |
-|---------------------|-------------|
-| `max-age=SECONDS`   | The time, in seconds, that the browser should remember that this site is only to be accessed using HTTPS. |
-| `includeSubDomains` | If this optional parameter is specified, this rule applies to all of the site's subdomains as well. |
-| `preload` | If this optional parameter is specified, its instruct the browser to always access the site using HTTPS because the site is included into `Strict-Transport-Security` [preload list](https://www.chromium.org/hsts/). |
+| Value               | Description                                                                                                                                                                                                           |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `max-age=SECONDS`   | The time, in seconds, that the browser should remember that this site is only to be accessed using HTTPS.                                                                                                             |
+| `includeSubDomains` | If this optional parameter is specified, this rule applies to all of the site's subdomains as well.                                                                                                                   |
+| `preload`           | If this optional parameter is specified, its instruct the browser to always access the site using HTTPS because the site is included into `Strict-Transport-Security` [preload list](https://www.chromium.org/hsts/). |
 
 ### Example
 
@@ -104,10 +105,10 @@ The Content-Security-Policy (CSP) [frame-ancestors](https://developer.mozilla.or
 
 ### Values
 
-| Value                | Description |
-|----------------------|-------------|
-| `deny`               | No rendering within a frame. |
-| `sameorigin`         | No rendering if origin mismatch. |
+| Value                | Description                                                                                      |
+| -------------------- | ------------------------------------------------------------------------------------------------ |
+| `deny`               | No rendering within a frame.                                                                     |
+| `sameorigin`         | No rendering if origin mismatch.                                                                 |
 | `allow-from: DOMAIN` | Allows rendering if framed by frame loaded from *DOMAIN* (**not supported by modern browsers**). |
 
 ### Example
@@ -132,8 +133,8 @@ Setting this header will prevent the browser from interpreting files as a differ
 
 ### Values
 
-| Value     | Description |
-|-----------|-------------|
+| Value     | Description                                                                                 |
+| --------- | ------------------------------------------------------------------------------------------- |
 | `nosniff` | Will prevent the browser from MIME-sniffing a response away from the declared content-type. |
 
 ### Example
@@ -156,33 +157,33 @@ A Content Security Policy (also named CSP) requires careful tuning and testing a
 
 💡 Source used was [Mozilla MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy#directives).
 
-| Directive                   | Description |
-|-----------------------------|-------------|
-| `base-uri`                  | Define the base URI for relative URIs. |
-| `default-src`               | Define loading policy for all resources type in case a resource type's dedicated directive is not defined (fallback). |
-| `script-src`                | Define which scripts the protected resource can execute. |
-| `object-src`                | Define from where the protected resource can load plugins. |
-| `style-src`                 | Define which styles (CSS) can be applied to the protected resource. |
-| `img-src`                   | Define from where the protected resource can load images. |
-| `media-src`                 | Define from where the protected resource can load video and audio. |
-| `frame-src`                 | *(Deprecated and replaced by `child-src`)* Define from where the protected resource can embed frames. |
-| `child-src`                 | Define from where the protected resource can embed frames. |
-| `frame-ancestors`           | Define from where the protected resource can be embedded in frames. Useful against [click jacking](https://owasp.org/www-community/attacks/Clickjacking) |
-| `font-src`                  | Define from where the protected resource can load fonts. |
-| `connect-src`               | Define which URIs the protected resource can load using script interfaces. |
-| `manifest-src`              | Define from where the protected resource can load manifests. |
-| `form-action`               | Define which URIs can be used as the action of HTML form elements. |
-| `sandbox`                   | Specifies an HTML sandbox policy that the user agent applies to the protected resource. |
-| `script-nonce`              | Define script execution by requiring the presence of the specified nonce on script elements. |
-| `plugin-types`              | Define the set of plugins that can be invoked by the protected resource by limiting the types of resources that can be embedded. |
+| Directive                   | Description                                                                                                                                                                                               |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `base-uri`                  | Define the base URI for relative URIs.                                                                                                                                                                    |
+| `default-src`               | Define loading policy for all resources type in case a resource type's dedicated directive is not defined (fallback).                                                                                     |
+| `script-src`                | Define which scripts the protected resource can execute.                                                                                                                                                  |
+| `object-src`                | Define from where the protected resource can load plugins.                                                                                                                                                |
+| `style-src`                 | Define which styles (CSS) can be applied to the protected resource.                                                                                                                                       |
+| `img-src`                   | Define from where the protected resource can load images.                                                                                                                                                 |
+| `media-src`                 | Define from where the protected resource can load video and audio.                                                                                                                                        |
+| `frame-src`                 | *(Deprecated and replaced by `child-src`)* Define from where the protected resource can embed frames.                                                                                                     |
+| `child-src`                 | Define from where the protected resource can embed frames.                                                                                                                                                |
+| `frame-ancestors`           | Define from where the protected resource can be embedded in frames. Useful against [click jacking](https://owasp.org/www-community/attacks/Clickjacking)                                                  |
+| `font-src`                  | Define from where the protected resource can load fonts.                                                                                                                                                  |
+| `connect-src`               | Define which URIs the protected resource can load using script interfaces.                                                                                                                                |
+| `manifest-src`              | Define from where the protected resource can load manifests.                                                                                                                                              |
+| `form-action`               | Define which URIs can be used as the action of HTML form elements.                                                                                                                                        |
+| `sandbox`                   | Specifies an HTML sandbox policy that the user agent applies to the protected resource.                                                                                                                   |
+| `script-nonce`              | Define script execution by requiring the presence of the specified nonce on script elements.                                                                                                              |
+| `plugin-types`              | Define the set of plugins that can be invoked by the protected resource by limiting the types of resources that can be embedded.                                                                          |
 | `reflected-xss`             | Instruct the user agent to activate or deactivate any heuristics used to filter or block reflected cross-site scripting attacks, equivalent to the effects of the non-standard `X-XSS-Protection` header. |
-| `block-all-mixed-content`   | *(Deprecated)* Prevent the user agent from loading mixed content. |
-| `upgrade-insecure-requests` | Instruct the user agent to using HTTPS when trying to download insecure HTTP resources |
-| `referrer`                  | *(Deprecated)* Define information the user agent can send in the `Referer` header. |
-| `report-uri`                | *(Deprecated and replaced by `report-to`)* Specifies a URI to which the user agent sends reports about policy violation. |
-| `report-to`                 | Specifies a group (defined in the `Report-To` header) to which the user agent sends reports about policy violation. |
-| `require-trusted-types-for` | Instructs user agents to control the data passed to [DOM XSS](https://portswigger.net/web-security/cross-site-scripting/dom-based) **sink** functions. |
-| `trusted-types`             | Specify an allowlist of [Trusted Type policy names](https://developer.mozilla.org/en-US/docs/Web/API/Trusted_Types_API) that a website can create using `trustedTypes.createPolicy()`. |
+| `block-all-mixed-content`   | *(Deprecated)* Prevent the user agent from loading mixed content.                                                                                                                                         |
+| `upgrade-insecure-requests` | Instruct the user agent to using HTTPS when trying to download insecure HTTP resources                                                                                                                    |
+| `referrer`                  | *(Deprecated)* Define information the user agent can send in the `Referer` header.                                                                                                                        |
+| `report-uri`                | *(Deprecated and replaced by `report-to`)* Specifies a URI to which the user agent sends reports about policy violation.                                                                                  |
+| `report-to`                 | Specifies a group (defined in the `Report-To` header) to which the user agent sends reports about policy violation.                                                                                       |
+| `require-trusted-types-for` | Instructs user agents to control the data passed to [DOM XSS](https://portswigger.net/web-security/cross-site-scripting/dom-based) **sink** functions.                                                    |
+| `trusted-types`             | Specify an allowlist of [Trusted Type policy names](https://developer.mozilla.org/en-US/docs/Web/API/Trusted_Types_API) that a website can create using `trustedTypes.createPolicy()`.                    |
 
 ### Example
 
@@ -218,7 +219,7 @@ if (window.trustedTypes && window.trustedTypes.createPolicy) {
             console.info("Default trusted types policy used.");
             return DOMPurify.sanitize(unsafeValue);
         }
-        // Functions createScript() and createScriptURL() implementation are missing here as it is an simple example
+        // Functions createScript() and createScriptURL() implementation are missing here as it is a simple example
         // See https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicyFactory/createPolicy
     });
 } else {
@@ -291,7 +292,7 @@ if (window.trustedTypes && window.trustedTypes.createPolicy) {
             console.info("'content_loader' trusted types policy used.");
             return DOMPurify.sanitize(unsafeValue);
         }
-        // createScript() and createScriptURL() functions implementation are missing here as it is an simple example
+        // createScript() and createScriptURL() functions implementation are missing here as it is a simple example
         // See https://developer.mozilla.org/en-US/docs/Web/API/TrustedTypePolicyFactory/createPolicy
     });
     // Create the content loading function using the Trusted Types policy created
@@ -366,13 +367,13 @@ A cross-domain policy file is an XML document that grants a web client, such as 
 
 ### Values
 
-| Value             | Description |
-|-------------------|-------------|
-| `none`            | No policy files are allowed anywhere on the target server, including this master policy file. |
-| `master-only`     | Only this master policy file is allowed. |
-| `by-content-type` | [HTTP/HTTPS only] Only policy files served with Content-Type: text/x-cross-domain-policy are allowed. |
+| Value             | Description                                                                                                           |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `none`            | No policy files are allowed anywhere on the target server, including this master policy file.                         |
+| `master-only`     | Only this master policy file is allowed.                                                                              |
+| `by-content-type` | [HTTP/HTTPS only] Only policy files served with Content-Type: text/x-cross-domain-policy are allowed.                 |
 | `by-ftp-filename` | [FTP only] Only policy files whose file names are crossdomain.xml (i.e. URLs ending in /crossdomain.xml) are allowed. |
-| `all`             | All policy files on this target domain are allowed. |
+| `all`             | All policy files on this target domain are allowed.                                                                   |
 
 ### Example
 
@@ -390,16 +391,16 @@ The `Referrer-Policy` HTTP header governs which referrer information, sent in th
 
 ### Values
 
-| Value                             | Description |
-|-----------------------------------|-------------|
-| `no-referrer`                     | The `Referer` header will be omitted entirely. No referrer information is sent along with requests. |
+| Value                             | Description                                                                                                                                                                                                             |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `no-referrer`                     | The `Referer` header will be omitted entirely. No referrer information is sent along with requests.                                                                                                                     |
 | `no-referrer-when-downgrade`      | This is the user agent's default behavior if no policy is specified. The origin is sent as referrer to a-priori as-much-secure destination (HTTPS → HTTPS), but isn't sent to a less secure destination (HTTPS → HTTP). |
-| `origin`                          | Only send the origin of the document as the referrer in all cases. (e.g. the document `https://example.com/page.html` will send the referrer `https://example.com/`.) |
-| `origin-when-cross-origin`        | Send a full URL when performing a same-origin request, but only send the origin of the document for other cases. |
-| `same-origin`                     | A referrer will be sent for same-site origins, but cross-origin requests will contain no referrer information. |
-| `strict-origin`                   | Only send the origin of the document as the referrer to a-priori as-much-secure destination (HTTPS → HTTPS), but don't send it to a less secure destination (HTTPS → HTTP). |
-| `strict-origin-when-cross-origin` | Send a full URL when performing a same-origin request, only send the origin of the document to a-priori as-much-secure destination (HTTPS → HTTPS), and send no header to a less secure destination (HTTPS → HTTP). |
-| `unsafe-url`                      | Send a full URL (stripped from parameters) when performing a same-origin or cross-origin request. |
+| `origin`                          | Only send the origin of the document as the referrer in all cases. (e.g. the document `https://example.com/page.html` will send the referrer `https://example.com/`.)                                                   |
+| `origin-when-cross-origin`        | Send a full URL when performing a same-origin request, but only send the origin of the document for other cases.                                                                                                        |
+| `same-origin`                     | A referrer will be sent for same-site origins, but cross-origin requests will contain no referrer information.                                                                                                          |
+| `strict-origin`                   | Only send the origin of the document as the referrer to a-priori as-much-secure destination (HTTPS → HTTPS), but don't send it to a less secure destination (HTTPS → HTTP).                                             |
+| `strict-origin-when-cross-origin` | Send a full URL when performing a same-origin request, only send the origin of the document to a-priori as-much-secure destination (HTTPS → HTTPS), and send no header to a less secure destination (HTTPS → HTTP).     |
+| `unsafe-url`                      | Send a full URL (stripped from parameters) when performing a same-origin or cross-origin request.                                                                                                                       |
 
 ### Example
 
@@ -418,16 +419,16 @@ The Clear-Site-Data header clears browsing data associated with the requesting w
 
 ### Values
 
-| Value                 | Experimental?  | Description |
-|-----------------------|----------------|-------------|
-| `"cache"`             | No             | Indicates that the server wishes to remove locally cached data for the origin of the response URL. |
-| `"cookies"`           | No             | Indicates that the server wishes to remove all cookies for the origin of the response URL. HTTP authentication credentials are also cleared out. This affects the entire registered domain, including subdomains. |
-| `"storage"`           | No             | Indicates that the server wishes to remove all DOM storage for the origin of the response URL. |
-| `"executionContexts"` | Yes            | Indicates that the server wishes to reload all browsing contexts for the origin of the response. |
-| `"prefetchCache"`     | Yes            | Indicates that the server wishes to remove all [speculation rules](https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API) prefetches that are scoped to the referrer origin. |
-| `"prerenderCache"`    | Yes            | Indicates that the server wishes to remove all [speculation rules](https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API) prerenders that are scoped to the referrer origin. |
-| `"clientHints"`       | Yes            | Indicates that the server wishes to remove all [client hints](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Client_hints) (requested via [Accept-CH](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Accept-CH)) stored for the origin of the response URL. |
-| `"*"`                 | No             | Indicates that the server wishes to clear all types of data for the origin of the response. |
+| Value                 | Experimental? | Description                                                                                                                                                                                                                                                                                |
+| --------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `"cache"`             | No            | Indicates that the server wishes to remove locally cached data for the origin of the response URL.                                                                                                                                                                                         |
+| `"cookies"`           | No            | Indicates that the server wishes to remove all cookies for the origin of the response URL. HTTP authentication credentials are also cleared out. This affects the entire registered domain, including subdomains.                                                                          |
+| `"storage"`           | No            | Indicates that the server wishes to remove all DOM storage for the origin of the response URL.                                                                                                                                                                                             |
+| `"executionContexts"` | Yes           | Indicates that the server wishes to reload all browsing contexts for the origin of the response.                                                                                                                                                                                           |
+| `"prefetchCache"`     | Yes           | Indicates that the server wishes to remove all [speculation rules](https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API) prefetches that are scoped to the referrer origin.                                                                                              |
+| `"prerenderCache"`    | Yes           | Indicates that the server wishes to remove all [speculation rules](https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API) prerenders that are scoped to the referrer origin.                                                                                              |
+| `"clientHints"`       | Yes           | Indicates that the server wishes to remove all [client hints](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Client_hints) (requested via [Accept-CH](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Accept-CH)) stored for the origin of the response URL. |
+| `"*"`                 | No            | Indicates that the server wishes to clear all types of data for the origin of the response.                                                                                                                                                                                                |
 
 ### Example
 
@@ -454,11 +455,11 @@ This response header (also named CORP) allows to define a policy that lets web s
 
 ### Values
 
-| Value               | Description |
-|---------------------|-------------|
-| `same-site`   | Only requests from the same [Site](https://developer.mozilla.org/en-US/docs/Glossary/Site) can read the resource. |
-| `same-origin` | Only requests from the same [Origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) (i.e. scheme + host + port) can read the resource. |
-| `cross-origin` | Requests from any [Origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) (both `same-site` and `cross-site`) can read the resource. Browsers are using this policy when an [CORP header is not specified](https://resourcepolicy.fyi/#corp-and-isolation). |
+| Value          | Description                                                                                                                                                                                                                                                            |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `same-site`    | Only requests from the same [Site](https://developer.mozilla.org/en-US/docs/Glossary/Site) can read the resource.                                                                                                                                                      |
+| `same-origin`  | Only requests from the same [Origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) (i.e. scheme + host + port) can read the resource.                                                                                                                      |
+| `cross-origin` | Requests from any [Origin](https://developer.mozilla.org/en-US/docs/Glossary/Origin) (both `same-site` and `cross-site`) can read the resource. Browsers are using this policy when a [CORP header is not specified](https://resourcepolicy.fyi/#corp-and-isolation). |
 
 ### Example
 
@@ -487,10 +488,10 @@ This response header (also named COEP) prevents a document from loading any cros
 
 ### Values
 
-| Value               | Description |
-|---------------------|-------------|
-| `unsafe-none`   | Allows the document to fetch cross-origin resources without giving explicit permission through the [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) protocol or the [Cross-Origin-Resource-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cross-Origin_Resource_Policy) header (it is the default value). |
-| `require-corp` | A document can only load resources from the same origin, or resources explicitly marked as loadable from another origin. |
+| Value          | Description                                                                                                                                                                                                                                                                                                                               |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `unsafe-none`  | Allows the document to fetch cross-origin resources without giving explicit permission through the [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) protocol or the [Cross-Origin-Resource-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cross-Origin_Resource_Policy) header (it is the default value). |
+| `require-corp` | A document can only load resources from the same origin, or resources explicitly marked as loadable from another origin.                                                                                                                                                                                                                  |
 
 ### Example
 
@@ -513,11 +514,11 @@ This response header (also named COOP) allows you to ensure a top-level document
 
 ### Values
 
-| Value               | Description |
-|---------------------|-------------|
-| `unsafe-none`   | Allows the document to be added to its opener's browsing context group unless the opener itself has a COOP of `same-origin` or `same-origin-allow-popups` (it is the default value). |
-| `same-origin-allow-popups` | Retains references to newly opened windows or tabs which either don't set COOP or which opt out of isolation by setting a COOP of `unsafe-none`. |
-| `same-origin` | Isolates the browsing context exclusively to same-origin documents. Cross-origin documents are not loaded in the same browsing context. |
+| Value                      | Description                                                                                                                                                                          |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `unsafe-none`              | Allows the document to be added to its opener's browsing context group unless the opener itself has a COOP of `same-origin` or `same-origin-allow-popups` (it is the default value). |
+| `same-origin-allow-popups` | Retains references to newly opened windows or tabs which either don't set COOP or which opt out of isolation by setting a COOP of `unsafe-none`.                                     |
+| `same-origin`              | Isolates the browsing context exclusively to same-origin documents. Cross-origin documents are not loaded in the same browsing context.                                              |
 
 ### Example
 
@@ -546,27 +547,27 @@ The headers named [Expires](https://developer.mozilla.org/en-US/docs/Web/HTTP/He
 
 ### Values applicable for HTTP responses
 
-| Value               | Description |
-|---------------------|-------------|
-| `must-revalidate`   | Indicates that once a resource becomes stale, caches do not use their stale copy without successful validation on the origin server. |
-| `no-cache` | The response may be stored by any cache, even if the response is normally non-cacheable. However, the stored response **MUST always** go through validation with the origin server first before using it. |
-| `no-store` | The response may not be stored in any cache. |
-| `no-transform` | An intermediate cache or proxy cannot edit the response body, `Content-Encoding`, `Content-Range`, or `Content-Type`. |
-| `public` | The response may be stored by any cache, even if the response is normally non-cacheable. |
-| `private` | The response may be stored only by a browser's cache, even if the response is normally non-cacheable. |
-| `proxy-revalidate` | Like `must-revalidate`, but only for shared caches (e.g., proxies). Ignored by private caches. |
-| `max-age=<seconds>` | The maximum amount of time a resource is considered fresh. Unlike [Expires](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires), this directive is relative to the time of the request. |
-| `s-maxage=<seconds>` | Overrides `max-age` or the [Expires](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires) header, but only for shared caches (e.g., proxies). Ignored by private caches. |
+| Value                | Description                                                                                                                                                                                               |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `must-revalidate`    | Indicates that once a resource becomes stale, caches do not use their stale copy without successful validation on the origin server.                                                                      |
+| `no-cache`           | The response may be stored by any cache, even if the response is normally non-cacheable. However, the stored response **MUST always** go through validation with the origin server first before using it. |
+| `no-store`           | The response may not be stored in any cache.                                                                                                                                                              |
+| `no-transform`       | An intermediate cache or proxy cannot edit the response body, `Content-Encoding`, `Content-Range`, or `Content-Type`.                                                                                     |
+| `public`             | The response may be stored by any cache, even if the response is normally non-cacheable.                                                                                                                  |
+| `private`            | The response may be stored only by a browser's cache, even if the response is normally non-cacheable.                                                                                                     |
+| `proxy-revalidate`   | Like `must-revalidate`, but only for shared caches (e.g., proxies). Ignored by private caches.                                                                                                            |
+| `max-age=<seconds>`  | The maximum amount of time a resource is considered fresh. Unlike [Expires](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires), this directive is relative to the time of the request.    |
+| `s-maxage=<seconds>` | Overrides `max-age` or the [Expires](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires) header, but only for shared caches (e.g., proxies). Ignored by private caches.                    |
 
 ### Extended values
 
 The following directives are not part of the core [HTTP caching standards document](https://datatracker.ietf.org/doc/html/rfc7234). Therefore, check this [table](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#browser_compatibility) for their support.
 
-| Value               | Description |
-|---------------------|-------------|
-| `immutable`   | Indicates that the response body will not change over time. |
-| `stale-while-revalidate=<seconds>`   | Indicates the client can accept a stale response, while asynchronously checking in the background for a fresh one. The **seconds** value indicates how long the client can accept a stale response. |
-| `stale-if-error=<seconds>`   | Indicates the client can accept a stale response if the check for a fresh one fails. The **seconds** value indicates how long the client can accept the stale response after the initial expiration. |
+| Value                              | Description                                                                                                                                                                                          |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `immutable`                        | Indicates that the response body will not change over time.                                                                                                                                          |
+| `stale-while-revalidate=<seconds>` | Indicates the client can accept a stale response, while asynchronously checking in the background for a fresh one. The **seconds** value indicates how long the client can accept a stale response.  |
+| `stale-if-error=<seconds>`         | Indicates the client can accept a stale response if the check for a fresh one fails. The **seconds** value indicates how long the client can accept the stale response after the initial expiration. |
 
 ### Example
 
@@ -613,7 +614,7 @@ The X-DNS-Prefetch-Control header controls [DNS prefetching](https://developer.m
 ### Values
 
 | Value | Description                                                                                                                                           |
-|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `on`  | Enables DNS prefetching. This is what browsers do if they support the feature when this header is not present.                                        |
 | `off` | Disables DNS prefetching. This is useful if you don't control the link on the pages or know that you don't want to leak information to these domains. |
 
@@ -632,6 +633,74 @@ X-DNS-Prefetch-Control: off
 * <https://caniuse.com/mdn-http_headers_x-dns-prefetch-control>
 * <https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/dns-prefetch>
 * <https://www.keycdn.com/support/prefetching>
+
+## Integrity-Policy
+
+The Integrity-Policy header allows servers to enforce [Subresource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Subresource_Integrity) (called **SRI**) checking by the browser on resources loaded for a page.
+
+Normally SRI is applied only when the `integrity` attribute is present on a `<script>` or `<link rel="stylesheet">` tag. Therefore, if it is not present then the integrity constraints are not enforced. The Integrity-Policy header is a way to indicate to the browser that any `<script>` or `<link rel="stylesheet">` tag, without the `integrity` attribute, must be blocked and the related resource must not be loaded.
+
+### Values
+
+The following directives are supported (source [Mozilla MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Integrity-Policy)):
+
+* `blocked-destinations` (*required*): A list of [request destinations](https://developer.mozilla.org/en-US/docs/Web/API/Request/destination) that must include valid integrity metadata.
+* `sources` (*optional*): A list of integrity sources that must include integrity metadata.
+* `endpoints` (*optional*): A list of [reporting endpoint names](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Reporting-Endpoints#endpoint) that indicate where reports will be sent.
+
+📍 The **reporting endpoints** must be defined in a [Reporting-Endpoints](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Reporting-Endpoints) HTTP response header.
+
+The values allowed for `blocked-destinations` and `sources` directives are the following:
+
+| Directive              | Value    | Description                                                                                                      |
+| ---------------------- | -------- | ---------------------------------------------------------------------------------------------------------------- |
+| `blocked-destinations` | `script` | Force the `integrity` attribute to be present on all `<script>` tags.                                            |
+| `blocked-destinations` | `style`  | Force the `integrity` attribute to be present on all `<link rel="stylesheet">` tags.                             |
+| `sources`              | `inline` | The integrity metadata source is inline to the content, such as the integrity attribute (*this is the default*). |
+
+💡 Omitting the `sources` directive is equivalent to specifying `sources=(inline)`.
+
+📍 Important note about the value `style` for the directive `blocked-destinations` based on technical tests performed:
+
+* Chrome `150.0.7871.115` / Edge `150.0.4078.65` / Chromium `152.0.7956.0`: Is not supported.
+* Firefox `152.0.6`: Is supported but not enabled by default (setting `security.integrity_policy.stylesheet.enabled`).
+
+### Example
+
+The following *policy* instruct the browser to block the loading of any script resource, for which, the `<script>` tag does not specify the `integrity` attribute. Any violation report will be sent to the endpoint `https://example.com/report` via an HTTP POST request:
+
+```
+Reporting-Endpoints: integrity-endpoint="https://example.com/report"
+Integrity-Policy: blocked-destinations=(script), endpoints=(integrity-endpoint)
+```
+
+Example of violation report sent based on technical tests performed:
+
+```json
+[
+ {
+  "age": 0,
+  "body": {
+   "blockedURL": "https://code.jquery.com/jquery-2.2.4.min.js",
+   "destination": "script",
+   "documentURL": "https://domain.com/?x=45",
+   "reportOnly": false
+  },
+  "type": "integrity-violation",
+  "url": "https://domain.com/?x=45",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
+ }
+]
+```
+
+### References
+
+* <https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Integrity-Policy>
+* <https://w3c.github.io/webappsec-subresource-integrity/#integrity-policy-section>
+* <https://caniuse.com/mdn-http_headers_integrity-policy>
+* <https://caniuse.com/mdn-http_headers_integrity-policy_blocked-destinations_style>
+* <https://caniuse.com/mdn-http_headers_integrity-policy_blocked-destinations_script>
+* <https://developer.mozilla.org/en-US/docs/Web/API/HTMLScriptElement/integrity>
 
 ## Permissions Policy
 
@@ -698,11 +767,11 @@ This header comes from the (now expired) internet draft [Expect-CT Extension for
 
 ### Values
 
-| Value         | Description |
-|---------------|-------------|
-| `report-uri`  | *(Optional)* Indicates the URL to which the browser should report Expect-CT failures. |
-| `enforce`     | *(Optional)* A valueless directive that, if present, signals to the browser that compliance to the CT Policy should be enforced (rather than report-only) and that the browser should refuse future connections that violate its CT Policy. When both the `enforce` and `report-uri` directives are present, the configuration is referred to as an "enforce-and-report" configuration, signalling to the browser both that compliance to the CT Policy should be enforced and that violations should be reported. |
-| `max-age`     | Specifies the number of seconds after the response is received the browser should remember and enforce certificate transparency compliance. |
+| Value        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `report-uri` | *(Optional)* Indicates the URL to which the browser should report Expect-CT failures.                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `enforce`    | *(Optional)* A valueless directive that, if present, signals to the browser that compliance to the CT Policy should be enforced (rather than report-only) and that the browser should refuse future connections that violate its CT Policy. When both the `enforce` and `report-uri` directives are present, the configuration is referred to as an "enforce-and-report" configuration, signalling to the browser both that compliance to the CT Policy should be enforced and that violations should be reported. |
+| `max-age`    | Specifies the number of seconds after the response is received the browser should remember and enforce certificate transparency compliance.                                                                                                                                                                                                                                                                                                                                                                        |
 
 ### Example
 
@@ -732,12 +801,12 @@ Criticism and concern revolved around malicious or human error scenarios known a
 
 ### Values
 
-| Value                   | Description |
-|-------------------------|-------------|
+| Value                   | Description                                                                                                                                                                                                                                  |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `pin-sha256="<sha256>"` | The quoted string is the Base64 encoded Subject Public Key Information (SPKI) fingerprint. It is possible to specify multiple pins for different public keys. Some browsers might allow other hashing algorithms than SHA-256 in the future. |
-| `max-age=SECONDS`       | The time, in seconds, that the browser should remember that this site is only to be accessed using one of the pinned keys. |
-| `includeSubDomains`     | If this optional parameter is specified, this rule applies to all of the site's subdomains as well. |
-| `report-uri="<URL>"`    | If this optional parameter is specified, pin validation failures are reported to the given URL. |
+| `max-age=SECONDS`       | The time, in seconds, that the browser should remember that this site is only to be accessed using one of the pinned keys.                                                                                                                   |
+| `includeSubDomains`     | If this optional parameter is specified, this rule applies to all of the site's subdomains as well.                                                                                                                                          |
+| `report-uri="<URL>"`    | If this optional parameter is specified, pin validation failures are reported to the given URL.                                                                                                                                              |
 
 ### Example
 
@@ -767,11 +836,11 @@ This header enables the cross-site scripting (XSS) filter in your browser.
 
 ### Values
 
-| Value                                           | Description |
-|-------------------------------------------------|-------------|
-| `0`                                             | Filter disabled. |
-| `1`                                             | Filter enabled. If a cross-site scripting attack is detected, in order to stop the attack, the browser will sanitize the page. |
-| `1; mode=block`                                 | Filter enabled. Rather than sanitize the page, when a XSS attack is detected, the browser will prevent rendering of the page. |
+| Value                                           | Description                                                                                                                                                                       |
+| ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `0`                                             | Filter disabled.                                                                                                                                                                  |
+| `1`                                             | Filter enabled. If a cross-site scripting attack is detected, in order to stop the attack, the browser will sanitize the page.                                                    |
+| `1; mode=block`                                 | Filter enabled. Rather than sanitize the page, when an XSS attack is detected, the browser will prevent rendering of the page.                                                     |
 | `1; report=http://[YOURDOMAIN]/your_report_URI` | Filter enabled. The browser will sanitize the page and report the violation. This is a Chromium function utilizing CSP violation reports to send details to a URI of your choice. |
 
 ### Example
@@ -803,9 +872,9 @@ This header serves for backwards compatibility with the **HTTP/1.0** caches that
 
 ### Values
 
-| Value       | Description                                                                                                                                 |
-|-------------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| `no-cache`  | Same as `Cache-Control: no-cache`. Forces caches to submit the request to the origin server for validation before a cached copy is released.|
+| Value      | Description                                                                                                                                  |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `no-cache` | Same as `Cache-Control: no-cache`. Forces caches to submit the request to the origin server for validation before a cached copy is released. |
 
 ### Example
 
