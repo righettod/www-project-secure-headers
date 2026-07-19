@@ -98,3 +98,28 @@
 ## Licensing
 
 📑 This project content is free to use. It is licensed under the [Apache 2.0 License](LICENSE.txt).
+
+## Usage of GenIA
+
+> [!CAUTION]
+> 📍 The content is created by a human, and GenIA is used as an assistant.
+
+### Rules
+
+🧑‍💻 We limit the usage of GenIA models to the following cases:
+
+* Correcting spelling and grammar errors in English.
+* Technical assistance with script development or proof-of-concepts (POCs).
+* Brainstorming to generate ideas for the OSHP project.
+* Searching for technical documentation.
+* Validating our understanding of the technical aspects of a header.
+
+⛔ GenIA must never author or directly draft the technical description, security rationale, or recommended configuration text for a header that gets published on the site:
+
+* A human must write and vouch for that content.
+* GenIA may only help research or validate it.
+
+### Help commands
+
+* The claude code command [`validate-md-content`](.claude/commands/validate-md-content.md) was created to help validating the content of a markdown file against predefined rules.
+  * Usage from a claude session is `/validate-md-content [markdown-file-to-validate]`.
