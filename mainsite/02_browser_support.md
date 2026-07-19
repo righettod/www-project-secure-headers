@@ -18,12 +18,12 @@
 | `Cross-Origin-Embedder-Policy`          | <https://caniuse.com/mdn-http_headers_cross-origin-embedder-policy>                                                                                                |
 | `Cross-Origin-Opener-Policy`            | <https://caniuse.com/mdn-http_headers_cross-origin-opener-policy>                                                                                                  |
 | `Cross-Origin-Resource-Policy`          | <https://caniuse.com/mdn-http_headers_cross-origin-resource-policy>                                                                                                |
-| `Permissions Policy`                    | <https://caniuse.com/permissions-policy>                                                                                                                           |
+| `Permissions-Policy`                    | <https://caniuse.com/permissions-policy>                                                                                                                           |
 | `Cache-Control`                         | <https://caniuse.com/mdn-http_headers_cache-control>                                                                                                               |
 | `X-DNS-Prefetch-Control`                | <https://caniuse.com/mdn-http_headers_x-dns-prefetch-control>                                                                                                      |
 | `Pragma`                                | <https://caniuse.com/mdn-http_headers_pragma>                                                                                                                      |
 | `Feature-Policy`                        | <https://caniuse.com/feature-policy>                                                                                                                               |
-| `HTTP Public-Key-Pins`                  | <https://caniuse.com/publickeypinning>                                                                                                                             |
+| `Public-Key-Pins`                       | <https://caniuse.com/publickeypinning>                                                                                                                             |
 | `Expect-CT`                             | <https://caniuse.com/mdn-http_headers_expect-ct>                                                                                                                   |
 | `X-XSS-Protection`                      | <https://caniuse.com/mdn-http_headers_x-xss-protection>                                                                                                            |
 | `Integrity-Policy`                      | <https://caniuse.com/mdn-http_headers_integrity-policy>                                                                                                            |
